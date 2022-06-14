@@ -1,23 +1,21 @@
 "use strict";
 
-let num = 50;
+let num = 20;
 
-// while (num <= 55) {
-//     console.log(num);
-//     num++;
-// };
-
-// do {
-//     console.log(num);
-//     num++;
-// }
-// while (num <= 55) 
-
-for (let i = 1; i < 10; i++) {
-    if (i === 6) {
-        // break;
-        continue;
-    }
-    
-    console.log(i);
+function showFirstMessage(text) {
+    console.log(text);
+    let num = 10;
+    console.log(num);
 }
+
+showFirstMessage("Hello World!");
+console.log(num);
+
+
+function calc(a, b) {
+    return (a +b);
+}
+
+console.log(calc(4, 5));
+console.log(calc(3, 5));
+console.log(calc(12, 5));
