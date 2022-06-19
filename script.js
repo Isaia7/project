@@ -1,30 +1,62 @@
-"use strict";
+/* Задание на урок:
 
-const str = "test";
-// const arr = [1, 2, 4];
+1) Первую часть задания повторить по уроку
 
-// console.log(str[2]);
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
 
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
 
-console.log(str.toUpperCase());
-console.log(str);
+P.S. Функции вызывать не обязательно*/
 
-const fruit = "Some fruit";
+'use strict';
 
-console.log(fruit.indexOf("fruit"));
+// Код возьмите из предыдущего домашнего задания
 
-const logg = "hello world";
+let numberOfFilms;
 
-// console.log(logg.slice(6, 11));
+function start() {
+     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// console.log(logg.substring(6, 11));
+     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+     }
+}
 
-console.log(logg.substr(6, 5));
+start();
 
-const num = 12.2;
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
+};
 
-console.log(Math.round(num));
+ for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
+    
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+        
+ }
 
-const test = "12.2px";
-console.log(parseInt(test));
-console.log(parseFloat(test));
+ if (personalMovieDB.count < 10) {
+     console.log("good job guy");
+ } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+     console.log("classical hahaha");        
+ } else if (personalMovieDB.count >= 30) {
+     console.log("you're epic boss!");
+ } else {
+    console.log("ERROR MTHF")
+ }
+ 
+ console.log(personalMovieDB);
