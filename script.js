@@ -1,62 +1,28 @@
-/* Задание на урок:
+"use strict";
 
-1) Первую часть задания повторить по уроку
+const arr = [2, 3, 6, 8, 10];
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
 
-2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
-false - выводит в консоль главный объект программы
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
 
-3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
-"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
-genres
+// // arr.pop();
+// arr.push(10);
 
-P.S. Функции вызывать не обязательно*/
+// console.log(arr);
 
-'use strict';
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
 
-// Код возьмите из предыдущего домашнего задания
+// for (let value of arr) {
+//     console.log(value);
+// }
 
-let numberOfFilms;
-
-function start() {
-     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-
-     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-     }
-}
-
-start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    private: false
-};
-
- for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
-    
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
-    }
-        
- }
-
- if (personalMovieDB.count < 10) {
-     console.log("good job guy");
- } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-     console.log("classical hahaha");        
- } else if (personalMovieDB.count >= 30) {
-     console.log("you're epic boss!");
- } else {
-    console.log("ERROR MTHF")
- }
- 
- console.log(personalMovieDB);
+const str = prompt("", "");
+const products = str.split(", ");
+products.sort();
+console.log(products.join('; '));
